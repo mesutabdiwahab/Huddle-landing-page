@@ -11,83 +11,79 @@ html{
   font-size: 10px;
 }
 body{
-  width: 1440px;
   font-family: 'Open Sans', sans-serif;
-  /* overflow-x: hidden; */
   background: 
-  url('/images/bg-desktop.svg') no-repeat left/contain 
+  url('./images/bg-mobile.svg') no-repeat  top center/contain 
   var(--primary-violet);
-  padding-top: 5rem;
-  padding-bottom: 2rem;
 }
 .mockup-img{
-  width: 100%;
+  max-width: 100%;
   object-fit: contain;
 }
 
 /* Container  */
 .container{
   width: 90%;
-  /* max-width: 100px; */
-  margin: 0 auto;
+  margin: 3.5rem auto;
 }
 .header{
-  height: 4rem;
+  height: 5rem;
   margin-bottom: 7rem;
 }
 .two-cols{
   display: grid;
-  grid-template-columns: repeat(3, minmax(350px, 1fr));
-  grid-template-rows: 1fr;
+  grid-template-columns: minmax(200px, 1fr);
+  grid-auto-rows: minmax(300px, 1fr);
   gap: 5rem;
 }
-.mockup{
-  grid-column: 1/3;
-}
+/* .mockup{
+ 
+} */
 .text{
-  grid-column: 3;
   color: #ffffff;
   position: relative;
+  padding: 1.5rem 0;
 }
 .heading{
-  width: 20ch;
   font-family: 'Poppins', sans-serif;
-  font-size: 3.5rem;
+  font-size: 2.7rem;
+  text-align: center;
   line-height: 1.5;
   margin-bottom: 2.5rem;
 }
 .description{
+  width: 300px;
+  margin: 0 auto;
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1.7;
+  text-align: center;
   word-spacing: 1px;
   margin-bottom: 2rem;
   color: #fff;
 }
 .btn-primary{
-  width: 200px;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
   font-family: inherit;
   font-size: 1.689rem;
-  line-height: 2;
+  line-height: 1.5;
   border-radius: 100px;
   padding: 1rem 0;
   border: 0;
   color: var(--primary-violet);
   box-shadow: 
-  2px 2px 1px rgba(255, 255, 255, 0.171),
-  3px 3px 1px rgba(255, 255, 255, 0.171),
-  4px 4px 1px rgba(255, 255, 255, 0.171),
-  -2px -2px 1px rgba(255, 255, 255, 0.171),
-  -3px -3px 1px  rgba(255, 255, 255, 0.171),     
-  -3px -4px 1px  rgba(255, 255, 255, 0.171);
+  3px 3px 4px 1px rgba(0, 0, 0, 0.171),
+  -3px -3px 5px 1px rgba(0, 0, 0, 0.171),
+  1px 1px 1px 1px rgba(0, 0, 0, 0.171),
+  2px 2px 1px 1px rgba(0, 0, 0, 0.171),
+  -1px -1px 1px 1px rgba(0, 0, 0, 0.171),     
+  -2px -2px 1px  1px rgba(0, 0, 0, 0.171);
 }
 .social-icons{
-  margin-top: 2rem;
+  margin-top: 5rem;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  justify-content: center;
 }
 
 /* Hover states */
@@ -104,7 +100,80 @@ body{
 }
 
 /* Media Queries */
-@media (max-width: 870px){
+
+/* targeting min-width: 550px */
+
+
+@media screen and (min-width: 480px){
+  .heading{
+    width: 20ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .description{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 500px) {
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 650px){
+  .heading{
+    font-size: 3.5rem;
+  }
+  .description{
+    font-size: 2rem;
+  }
+  .social-icons{
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 950px){
+  body{
+    background: url('./images/bg-desktop.svg') no-repeat 
+    left/contain  var(--primary-violet);
+  }
+  .two-cols{
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2.5rem;
+    grid-template-rows: 1fr;
+  }
+  .mockup{
+    grid-column: 1/3;
+  }
+  .text{
+
+    padding: 6rem 2rem 0 0;
+    justify-content: flex-start;
+  }
+  .heading{
+    font-size: 3.5rem;
+    text-align: left;
+    width: unset;
+  }
+  .description{
+    width: unset;
+    text-align: left;
+    font-size: 1.6rem;
+    word-break: keep-all;
+  }
+  .btn-primary{
+    margin-left: unset;
+    margin-right: unset;
+    line-height: 2;
+  }
+  .social-icons{
+    margin-top: 3rem;
+    justify-content: flex-end;
+  }
+}
+/* 
+/* @media (max-width: 870px){
   body{
     background: url('/images/bg-desktop.svg') no-repeat top left/contain var(--primary-violet);
   }
@@ -132,9 +201,9 @@ body{
     margin-top: 5rem;
     justify-content: center;
   }
-}
+} */ 
 
-@media (max-width: 450px){
+/* @media (max-width: 450px){
   body{
     background: url('/images/bg-mobile.svg') no-repeat  top left/contain var(--primary-violet);
   }
